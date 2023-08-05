@@ -1,0 +1,10 @@
+[
+	{ "name": "mercury", "isGasPlanet": false },
+	{ "name": "venus", "isGasPlanet": false },
+	{ "name": "earth", "isGasPlanet": false },
+	{ "name": "mars", "isGasPlanet": false },
+	{ "name": "jupiter", "isGasPlanet": true },
+	{ "name": "saturn", "isGasPlanet": true },
+	{ "name": "urnaus", "isGasPlanet": true },
+	{ "name": "neptune", "isGasPlanet": true }
+]
