@@ -1,9 +1,9 @@
-import { AppContext } from '../App';
-import { useContext } from 'react';
+// import { AppContext } from '../App';
+// import { useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 export default function Home() {
-	const { username } = useContext(AppContext);
+	// const { username } = useContext(AppContext);
 
 	const {
 		data: catData,
@@ -23,9 +23,9 @@ export default function Home() {
 
 	return (
 		<>
-			<h1>This is homepage for user {username}</h1>
+			{/* <h1>This is homepage for user {username}</h1>
 			<h2>{catData.fact}</h2>
-			<button onClick={refetch}>New Fact</button>
+			<button onClick={refetch}>New Fact</button> */}
 		</>
 	);
 }

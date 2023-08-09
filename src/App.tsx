@@ -1,37 +1,40 @@
 import './App.css';
-import Yest from './components/Yest';
-import { useState, createContext } from 'react';
-import Task from './components/Task';
-import CatStuf from './components/CatStuff';
-import GuessAge from './components/GuessAge';
+// import Yest from './components/Yest';
+// import { useState, createContext } from 'react';
+// import Task from './components/Task';
+// import CatStuf from './components/CatStuff';
+// import GuessAge from './components/GuessAge';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import { Link } from 'react-router-dom';
-import Excuse from './components/Excuse';
+// import Home from './pages/Home';
+// import { Link } from 'react-router-dom';
+// import Excuse from './components/Excuse';
 import Profile from './pages/Profile';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Form from './components/Form';
 import Toggles from './components/Toggles';
-import Planets from './components/Planets';
+// import Planets from './components/Planets';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import Login from './pages/Login';
 // interface TodoItems {
 // 	id: number;
 // 	taskName: string;
 // 	completed: boolean;
 // }
 
-export const AppContext = createContext();
+// export const AppContext = createContext();
 
 function App() {
-	const [username, setUsername] = useState('Bhanu Don');
-	const someClient = new QueryClient({
-		defaultOptions: {
-			queries: {
-				refetchOnWindowFocus: false
-			}
-		}
-	});
+	// const [username, setUsername] = useState('Bhanu Don');
+	// const someClient = new QueryClient({
+	// 	defaultOptions: {
+	// 		queries: {
+	// 			refetchOnWindowFocus: false
+	// 		}
+	// 	}
+	// });
 	// const [textAppear, textApperead] = useState(false);
 	// const [todoList, setTodoList] = useState<TodoItems>([]);
 	// const [newTask, setNewTask] = useState('');
@@ -75,41 +78,49 @@ function App() {
 
 	return (
 		<>
+			<h1>Bhanu</h1>
+			<Provider store={store}>
+				<Login />
+			</Provider>
 			{/* <Planets name={username} /> */}
-			<QueryClientProvider client={someClient}>
-				<AppContext.Provider value={{ username, setUsername }}>
-					{/* <Excuse /> */}
-					<Router>
-						<Navbar />
-						<Routes>
-							<Route
-								path='/'
-								element={<Home />}
-							/>
-							<Route
-								path='/profile'
-								element={<Profile />}
-							/>
-							<Route
-								path='/contact'
-								element={<Contact />}
-							/>
-							<Route
-								path='/form'
-								element={<Form />}
-							/>
-							<Route
-								path='/toggle'
-								element={<Toggles />}
-							/>
-							<Route
-								path='*'
-								element={<h1>404 PAGE NOT FOUND</h1>}
-							/>
-						</Routes>
-					</Router>
-				</AppContext.Provider>
-			</QueryClientProvider>
+			{/* <QueryClientProvider client={someClient}>
+				<AppContext.Provider value={{ username, setUsername }}> */}
+			{/* <Excuse /> */}
+			{/* <Router>
+				<Navbar />
+				<Routes>
+					<Route
+						path='/'
+						element={<Home />}
+					/>
+					<Route
+						path='/profile'
+						element={<Profile />}
+					/>
+					<Route
+						path='/contact'
+						element={<Contact />}
+					/>
+					<Route
+						path='/form'
+						element={<Form />}
+					/>
+					<Route
+						path='/toggle'
+						element={<Toggles />}
+					/>
+					<Route
+						path='/login'
+						element={<Login />}
+					/>
+					<Route
+						path='*'
+						element={<h1>404 PAGE NOT FOUND</h1>}
+					/>
+				</Routes>
+			</Router> */}
+			{/* </AppContext.Provider>
+			</QueryClientProvider> */}
 
 			{/* <GuessAge />
 			<CatStuf />
